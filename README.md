@@ -1,1 +1,6 @@
-# Proyecto Final DAW## IntegrantesOscar Manuel Peraza Velasquez - PV21001Wilber Daniel Garcia Martinez - GM16091
+# Proyecto Final DAW
+
+## Integrantes
+Oscar Manuel Peraza Velasquez - PV21001
+Wilber Daniel Garcia Martinez - GM16091
+Francisco Javier Calderón Castro - CC18147
