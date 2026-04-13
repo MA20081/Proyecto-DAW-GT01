@@ -1,41 +1,34 @@
 package com.mediagenda.dto;
 
+import java.time.LocalDateTime;
+
 public class CitaResponseDTO {
 
     private Long id;
-    private String paciente;
-    private String fecha;
-    private String motivo;
+    private String nombrePaciente;
+    private String nombreDoctor;
+    private String especialidad;
+    private LocalDateTime fechaHora;
+    private String estado;
 
-    public Long getId() {
-        return id;
-    }
+    // =====================
+    // Getters y Setters
+    // =====================
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public String getNombrePaciente() { return nombrePaciente; }
+    public void setNombrePaciente(String v) { this.nombrePaciente = v; }
 
-    public String getPaciente() {
-        return paciente;
-    }
+    public String getNombreDoctor() { return nombreDoctor; }
+    public void setNombreDoctor(String v) { this.nombreDoctor = v; }
 
-    public void setPaciente(String paciente) {
-        this.paciente = paciente;
-    }
+    public String getEspecialidad() { return especialidad; }
+    public void setEspecialidad(String v) { this.especialidad = v; }
 
-    public String getFecha() {
-        return fecha;
-    }
+    public LocalDateTime getFechaHora() { return fechaHora; }
+    public void setFechaHora(LocalDateTime v) { this.fechaHora = v; }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getMotivo() {
-        return motivo;
-    }
-
-    public void setMotivo(String motivo) {
-        this.motivo = motivo;
-    }
+    public String getEstado() { return estado; }
+    public void setEstado(String v) { this.estado = v; }
 }

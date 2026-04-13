@@ -11,22 +11,24 @@ public class Cita {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(name = "nombre_paciente", nullable = false)
     private String nombrePaciente;
 
-    @Column(nullable = false)
+    @Column(name = "nombre_doctor", nullable = false)
     private String nombreDoctor;
 
     @Column(nullable = false)
     private String especialidad;
 
-    @Column(nullable = false)
+    @Column(name = "fecha_hora", nullable = false)
     private LocalDateTime fechaHora;
 
     @Column
     private String estado;
 
+    // =====================
     // Getters y Setters
+    // =====================
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
