@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediAgenda</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <span class="logo">🏥 MediAgenda</span>
+    <ul class="nav-links">
+      <li><a href="#listado">Inicio</a></li>
+      <li><a href="#nueva-cita">Nueva Cita</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- GET: Listado -->
+    <section id="listado">
+      <div class="section-header">
+        <h2>Citas médicas registradas</h2>
+        <span id="total-citas" class="badge-total">0 registros</span>
+      </div>
+      <div class="table-wrapper">
+        <table id="tabla-citas">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Paciente</th>
+              <th>Doctor</th>
+              <th>Especialidad</th>
+              <th>Fecha y Hora</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpo-tabla"></tbody>
+        </table>
+      </div>
+      <div id="toast" class="toast hidden"></div>
+    </section>
+
+    <!-- POST: Formulario nueva cita -->
+    <section id="nueva-cita">
+      <h2>Nueva cita</h2>
+      <p class="seccion-pendiente">Formulario POST</p>
+    </section>
+
+    <!-- PUT: Modal edición -->
+    <div id="modal-editar" class="modal hidden">
+      <div class="modal-contenido">
+        <p class="seccion-pendiente">Modal de edicion PUT</p>
+        <button id="btn-cerrar-modal" class="btn-cancelar">Cerrar</button>
+      </div>
+    </div>
+
+    <!-- DELETE: Confirmación -->
+    <div id="modal-eliminar" class="modal hidden">
+      <div class="modal-contenido">
+        <p id="texto-confirmar-eliminar">¿Eliminar esta cita?</p>
+        <div class="modal-acciones">
+          <button id="btn-confirmar-eliminar" class="btn-eliminar">Si, eliminar</button>
+          <button id="btn-cancelar-eliminar" class="btn-cancelar">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="js/citas.js"></script>
+  <script src="js/listado.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
