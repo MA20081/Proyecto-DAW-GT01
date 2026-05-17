@@ -285,6 +285,7 @@ section {
 }
 
 @media (min-width: 768px) {
+
     .section-header h2 {
         font-size: 1.4rem;
     }
@@ -297,5 +298,25 @@ section {
 
     .modal-contenido {
         width: 480px;
+    }
+
+    .nav-links {
+        gap: 32px;
+    }
+
+    .table-wrapper {
+        overflow-x: visible;
+    }
+
+    #tabla-citas {
+        min-width: 100%;
+    }
+
+    .acciones {
+        justify-content: center;
+    }
+
+    section {
+        margin-bottom: 4rem;
     }
 }
