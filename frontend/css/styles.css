@@ -298,4 +298,52 @@ section {
     .modal-contenido {
         width: 480px;
     }
+    /* ===== FORMULARIO NUEVA CITA ===== */
+
+.formulario-cita {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo-formulario label {
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.campo-formulario input,
+.campo-formulario select {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.btn-guardar {
+  padding: 0.9rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #0d6efd;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-guardar:hover {
+  opacity: 0.9;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .formulario-cita {
+    max-width: 500px;
+  }
+}
 }

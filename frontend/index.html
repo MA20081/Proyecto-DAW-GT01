@@ -44,10 +44,70 @@
     </section>
 
     <!-- POST: Formulario nueva cita -->
-    <section id="nueva-cita">
-      <h2>Nueva cita</h2>
-      <p class="seccion-pendiente">Formulario POST</p>
-    </section>
+    <!-- POST: Formulario nueva cita -->
+<section id="nueva-cita">
+  <h2>Nueva cita</h2>
+
+  <form id="form-crear-cita" class="formulario-cita">
+
+    <div class="campo-formulario">
+      <label for="nombrePaciente">Paciente</label>
+      <input
+        type="text"
+        id="nombrePaciente"
+        placeholder="Ingrese nombre del paciente"
+        required
+      />
+    </div>
+
+    <div class="campo-formulario">
+      <label for="nombreDoctor">Doctor</label>
+      <input
+        type="text"
+        id="nombreDoctor"
+        placeholder="Ingrese nombre del doctor"
+        required
+      />
+    </div>
+
+    <div class="campo-formulario">
+      <label for="especialidad">Especialidad</label>
+      <select id="especialidad" required>
+        <option value="">Seleccione especialidad</option>
+        <option value="Cardiología">Cardiología</option>
+        <option value="Pediatría">Pediatría</option>
+        <option value="Dermatología">Dermatología</option>
+        <option value="Neurología">Neurología</option>
+        <option value="Traumatología">Traumatología</option>
+        <option value="Medicina General">Medicina General</option>
+      </select>
+    </div>
+
+    <div class="campo-formulario">
+      <label for="fechaHora">Fecha y hora</label>
+      <input
+        type="datetime-local"
+        id="fechaHora"
+        required
+      />
+    </div>
+
+    <div class="campo-formulario">
+      <label for="estado">Estado</label>
+      <select id="estado" required>
+        <option value="">Seleccione estado</option>
+        <option value="PENDIENTE">Pendiente</option>
+        <option value="CONFIRMADA">Confirmada</option>
+        <option value="CANCELADA">Cancelada</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn-guardar">
+      Guardar Cita
+    </button>
+
+  </form>
+</section>
 
     <!-- PUT: Modal edición -->
     <div id="modal-editar" class="modal hidden">
@@ -72,6 +132,7 @@
 
   <script src="js/citas.js"></script>
   <script src="js/listado.js"></script>
+  <script src="js/crear.js"></script>
   <script src="js/app.js"></script>
 
 </body>
