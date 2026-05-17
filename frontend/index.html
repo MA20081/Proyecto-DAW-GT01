@@ -50,10 +50,59 @@
     </section>
 
     <!-- PUT: Modal edición -->
-    <div id="modal-editar" class="modal hidden">
+<div id="modal-editar" class="modal hidden">
       <div class="modal-contenido">
-        <p class="seccion-pendiente">Modal de edicion PUT</p>
-        <button id="btn-cerrar-modal" class="btn-cancelar">Cerrar</button>
+        <h2 id="titulo-edicion">Formulario de Edición</h2>
+        
+        <form id="form-editar-cita">
+          <div class="form-group">
+            <label>ID de la Cita:</label>
+            <input type="text" id="edit-id" readonly style="background-color: #f3f3f3; cursor: not-allowed; font-weight: bold;">
+          </div>
+
+          <div class="form-group">
+            <label for="edit-paciente">Nombre del Paciente:</label>
+            <input type="text" id="edit-paciente" required>
+          </div>
+
+          <div class="form-group">
+            <label for="edit-doctor">Nombre del Doctor:</label>
+            <input type="text" id="edit-doctor" required>
+          </div>
+
+          <div class="form-group">
+            <label for="edit-especialidad">Especialidad:</label>
+            <select id="edit-especialidad" required>
+              <option value="Medicina General">Medicina General</option>
+              <option value="Pediatría">Pediatría</option>
+              <option value="Cardiología">Cardiología</option>
+              <option value="Dermatología">Dermatología</option>
+              <option value="Neurología">Neurología</option>
+              <option value="Traumatología">Traumatología</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="edit-fecha-hora">Fecha y Hora:</label>
+            <input type="datetime-local" id="edit-fecha-hora" step="60" required>
+          </div>
+
+          <div class="form-group">
+            <label for="edit-estado">Estado:</label>
+            <select id="edit-estado" required>
+              <option value="PENDIENTE">PENDIENTE</option>
+              <option value="CONFIRMADA">CONFIRMADA</option>
+              <option value="CANCELADA">CANCELADA</option>
+            </select>
+          </div>
+
+          <div id="mensaje-exito-editar" class="alert-success hidden" style="color: #155724; background-color: #d4edda; padding: 10px; margin: 15px 0; text-align: center; border-radius: 4px; font-weight: bold; border: 1px solid #c3e6cb;"></div>
+
+          <div class="modal-acciones">
+            <button type="submit" class="btn-guardar" style="background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: bold;">Guardar Cambios</button>
+            <button type="button" id="btn-cerrar-modal" class="btn-cancelar">Cancelar</button>
+          </div>
+        </form>
       </div>
     </div>
 
@@ -72,6 +121,7 @@
 
   <script src="js/citas.js"></script>
   <script src="js/listado.js"></script>
+  <script src="js/editar.js"></script>
   <script src="js/app.js"></script>
 
 </body>
