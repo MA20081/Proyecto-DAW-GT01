@@ -1,0 +1,71 @@
+version: "3.9"
+
+# ============================================================
+# MediAgenda — Docker Compose
+# Levanta 3 servicios con: docker-compose up --build
+# ============================================================
+
+services:
+
+  # ── Base de Datos PostgreSQL ──────────────────────────────
+  db:
+    image: postgres:15-alpine
+    container_name: mediagenda_db
+    restart: always
+    environment:
+      POSTGRES_DB: mediagenda_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "123456"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    ports:
+      - "5433:5432"
+    networks:
+      - mediagenda_net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d mediagenda_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Backend Spring Boot ───────────────────────────────────
+  backend:
+    build:
+      context: ./backend/mediagenda
+      dockerfile: Dockerfile
+    container_name: mediagenda_backend
+    restart: always
+    environment:
+      DB_HOST: db
+      DB_USER: postgres
+      DB_PASSWORD: "123456"
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - mediagenda_net
+
+  # ── Frontend Nginx ────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: mediagenda_frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - mediagenda_net
+
+# ── Volúmenes y red ───────────────────────────────────────
+volumes:
+  postgres_data:
+
+networks:
+  mediagenda_net:
+    driver: bridge
