@@ -8,14 +8,17 @@ import java.time.LocalDateTime;
 public class Cita {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "citas_seq")
+    @SequenceGenerator(name = "citas_seq", sequenceName = "citas_id_seq", allocationSize = 1)
     private Long id;
 
-    @Column(name = "nombre_paciente", nullable = false)
-    private String nombrePaciente;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "paciente_id", nullable = false)
+    private Paciente paciente;
 
-    @Column(name = "nombre_doctor", nullable = false)
-    private String nombreDoctor;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "doctor_id", nullable = false)
+    private Doctor doctor;
 
     @Column(nullable = false)
     private String especialidad;
@@ -26,24 +29,16 @@ public class Cita {
     @Column
     private String estado;
 
-    // =====================
-    // Getters y Setters
-    // =====================
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
-
-    public String getNombrePaciente() { return nombrePaciente; }
-    public void setNombrePaciente(String v) { this.nombrePaciente = v; }
-
-    public String getNombreDoctor() { return nombreDoctor; }
-    public void setNombreDoctor(String v) { this.nombreDoctor = v; }
-
+    public Paciente getPaciente() { return paciente; }
+    public void setPaciente(Paciente paciente) { this.paciente = paciente; }
+    public Doctor getDoctor() { return doctor; }
+    public void setDoctor(Doctor doctor) { this.doctor = doctor; }
     public String getEspecialidad() { return especialidad; }
-    public void setEspecialidad(String v) { this.especialidad = v; }
-
+    public void setEspecialidad(String especialidad) { this.especialidad = especialidad; }
     public LocalDateTime getFechaHora() { return fechaHora; }
-    public void setFechaHora(LocalDateTime v) { this.fechaHora = v; }
-
+    public void setFechaHora(LocalDateTime fechaHora) { this.fechaHora = fechaHora; }
     public String getEstado() { return estado; }
-    public void setEstado(String v) { this.estado = v; }
+    public void setEstado(String estado) { this.estado = estado; }
 }

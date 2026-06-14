@@ -94,6 +94,31 @@
       </form>
     </section>
 
+<<<<<<< HEAD
+    <!-- PUT: Modal edición -->
+<div id="modal-editar" class="modal hidden">
+      <div class="modal-contenido">
+        <h2 id="titulo-edicion">Formulario de Edición</h2>
+        
+        <form id="form-editar-cita">
+          <div class="form-group">
+            <label>ID de la Cita:</label>
+            <input type="text" id="edit-id" readonly style="background-color: #f3f3f3; cursor: not-allowed; font-weight: bold;">
+          </div>
+
+          <div class="form-group">
+            <label for="edit-paciente">Nombre del Paciente:</label>
+            <input type="text" id="edit-paciente" required>
+          </div>
+
+          <div class="form-group">
+            <label for="edit-doctor">Nombre del Doctor:</label>
+            <input type="text" id="edit-doctor" required>
+          </div>
+
+          <div class="form-group">
+            <label for="edit-especialidad">Especialidad:</label>
+=======
     <!-- ===================== PUT: Modal de edición (Wilber García) ===================== -->
     <div id="modal-editar" class="modal hidden">
       <div class="modal-contenido">
@@ -119,6 +144,7 @@
 
           <div class="form-grupo">
             <label for="edit-especialidad">Especialidad</label>
+>>>>>>> 50cb44a0122c66f322eb22db2a16150c5ba27950
             <select id="edit-especialidad" required>
               <option value="Medicina General">Medicina General</option>
               <option value="Pediatría">Pediatría</option>
@@ -129,6 +155,15 @@
             </select>
           </div>
 
+<<<<<<< HEAD
+          <div class="form-group">
+            <label for="edit-fecha-hora">Fecha y Hora:</label>
+            <input type="datetime-local" id="edit-fecha-hora" step="60" required>
+          </div>
+
+          <div class="form-group">
+            <label for="edit-estado">Estado:</label>
+=======
           <div class="form-grupo">
             <label for="edit-fecha-hora">Fecha y hora</label>
             <input type="datetime-local" id="edit-fecha-hora" required />
@@ -136,6 +171,7 @@
 
           <div class="form-grupo">
             <label for="edit-estado">Estado</label>
+>>>>>>> 50cb44a0122c66f322eb22db2a16150c5ba27950
             <select id="edit-estado" required>
               <option value="PENDIENTE">PENDIENTE</option>
               <option value="CONFIRMADA">CONFIRMADA</option>
@@ -143,6 +179,14 @@
             </select>
           </div>
 
+<<<<<<< HEAD
+          <div id="mensaje-exito-editar" class="alert-success hidden" style="color: #155724; background-color: #d4edda; padding: 10px; margin: 15px 0; text-align: center; border-radius: 4px; font-weight: bold; border: 1px solid #c3e6cb;"></div>
+
+          <div class="modal-acciones">
+            <button type="submit" class="btn-guardar" style="background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: bold;">Guardar Cambios</button>
+            <button type="button" id="btn-cerrar-modal" class="btn-cancelar">Cancelar</button>
+          </div>
+=======
           <p id="mensaje-exito-editar" class="mensaje-exito hidden"></p>
 
           <div class="modal-acciones">
@@ -150,6 +194,7 @@
             <button type="button" id="btn-cerrar-modal" class="btn-cancelar">Cancelar</button>
           </div>
 
+>>>>>>> 50cb44a0122c66f322eb22db2a16150c5ba27950
         </form>
       </div>
     </div>
@@ -171,9 +216,13 @@
   <!-- Scripts -->
   <script src="js/citas.js"></script>
   <script src="js/listado.js"></script>
+<<<<<<< HEAD
+  <script src="js/editar.js"></script>
+=======
   <script src="js/crear.js"></script>
   <script src="js/editar.js"></script>
   <script src="js/eliminar.js"></script>
+>>>>>>> 50cb44a0122c66f322eb22db2a16150c5ba27950
   <script src="js/app.js"></script>
   <script src="js/eliminar.js"></script>
 
