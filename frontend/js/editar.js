@@ -43,6 +43,10 @@ document.addEventListener('DOMContentLoaded', function () {
         editEstadoSelect.value = cita.estado;
 
         // Mostrar el modal
+<<<<<<< HEAD
+=======
+        document.getElementById('edit-id-display').textContent = id;
+>>>>>>> 50cb44a0122c66f322eb22db2a16150c5ba27950
         document.getElementById('modal-editar').classList.remove('hidden');
     };
 
