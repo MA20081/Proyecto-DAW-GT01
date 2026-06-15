@@ -216,9 +216,9 @@ Nota: el puerto de la base de datos hacia el host es 5433 (no 5432), para evitar
 
 Documentación interactiva generada con SpringDoc OpenAPI:
 
-![Vista general de Swagger parte 1](docs/swagger-general-1.png)
+![Vista general de Swagger parte 1](docs/swagger-general1.png)
 
-![Vista general de Swagger parte 2](docs/swagger-general-2.png)
+![Vista general de Swagger parte 2](docs/swagger-general2.png)
 
 Prueba de POST con respuesta 201 Created:
 
