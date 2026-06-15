@@ -13,7 +13,7 @@ CREATE SEQUENCE IF NOT EXISTS citas_id_seq         START 1 INCREMENT 1;
 -- Relacion: 1:N con citas (un paciente tiene muchas citas)
 CREATE TABLE IF NOT EXISTS pacientes (
     id        BIGINT       DEFAULT nextval('pacientes_id_seq') PRIMARY KEY,
-    nombre    VARCHAR(100) NOT NULL,
+    nombre    VARCHAR(100) NOT NULL UNIQUE,
     telefono  VARCHAR(20),
     correo    VARCHAR(100)
 );
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS especialidades (
 -- Relacion: 1:N con citas, N:M con especialidades
 CREATE TABLE IF NOT EXISTS doctores (
     id       BIGINT       DEFAULT nextval('doctores_id_seq') PRIMARY KEY,
-    nombre   VARCHAR(100) NOT NULL,
+    nombre   VARCHAR(100) NOT NULL UNIQUE,
     telefono VARCHAR(20)
 );
 
@@ -68,13 +68,13 @@ INSERT INTO pacientes (nombre, telefono, correo) VALUES
     ('María López',     '7111-2222', 'maria@correo.com'),
     ('José Martínez',   '7333-4444', 'jose@correo.com'),
     ('Sofía Hernández', '7555-6666', 'sofia@correo.com')
-ON CONFLICT DO NOTHING;
+ON CONFLICT (nombre) DO NOTHING;
 
 INSERT INTO doctores (nombre, telefono) VALUES
     ('Dr. Carlos Rivas',  '2222-1111'),
     ('Dra. Ana Flores',   '2222-3333'),
     ('Dr. Roberto Vega',  '2222-5555')
-ON CONFLICT DO NOTHING;
+ON CONFLICT (nombre) DO NOTHING;
 
 INSERT INTO doctor_especialidad (doctor_id, especialidad_id) VALUES
     (1, 3),
