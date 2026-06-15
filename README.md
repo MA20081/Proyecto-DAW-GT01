@@ -1,4 +1,4 @@
-# MediAgenda — Sistema de Gestión de Citas Médicas
+#  MediAgenda — Sistema de Gestión de Citas Médicas
 
 **Proyecto Final — Desarrollo de Aplicaciones Web**  
 Universidad de El Salvador | Facultad Multidisciplinaria de Occidente  
@@ -7,7 +7,7 @@ Tutor: Ing. Victoria Castro
 ## Integrantes
 
 | Nombre | Carnet |
-|
+|---|---|
 | Oscar Manuel Peraza Velasquez | PV21001 |
 | Geovanni Edmundo Ibáñez Campos | IC22003 |
 | Wilber Daniel Garcia Martinez | GM16091 |
@@ -27,9 +27,6 @@ MediAgenda es una aplicación web full-stack para la gestión de citas médicas.
 - Registro de doctores con asignación de especialidades
 - Creación, consulta, edición y cancelación de citas médicas
 - Interfaz web responsiva accesible desde cualquier navegador
-
----
-
 
 ## Manual de Despliegue con Docker
 
